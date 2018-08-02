@@ -5,6 +5,8 @@
 package com.lhy.demo.web;
 
 import com.lhy.demo.domain.User;
+import com.lhy.demo.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -20,6 +22,8 @@ import java.util.*;
 @RequestMapping(value = "/users")
 public class UserController {
 
+    @Autowired
+    private IUserService userService;
     //创建线程安全的map
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<>());
 
@@ -36,6 +40,7 @@ public class UserController {
         // 处理"/users/"的POST请求，用来创建User
         // 除了@ModelAttribute绑定参数之外，还可以通过@RequestParam从页面中传递参数
         users.put(user.getId(), user);
+        userService.create(user.getName(),user.getAge());
         return "success";
     }
 

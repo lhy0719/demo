@@ -5,10 +5,10 @@
 package com.lhy.demo.web;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
  * @version v 1.0.0
  * @since v 1.0.0 2018-08-01 10:17
  */
-@RestController
+@Controller
 public class IndexController {
 
     @Value("${lhy.name}")
@@ -29,18 +29,19 @@ public class IndexController {
     private String id;
 
     @ModelAttribute
-    public void model(Model model){
+    public void init(ModelMap map){
+        map.addAttribute("name",getName());
+        map.addAttribute("id",getId());
         System.out.println("here is ModelAttribute");
-        model.addAttribute("springBoot", "LHY");
     }
 
     @RequestMapping("index")
     public String index(HttpServletRequest request){
-        return "Hello " + request.getAttribute("springBoot");
+        return "index";
     }
 
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
