@@ -67,4 +67,9 @@ public class UserController {
         users.remove(id);
         return "success";
     }
+
+    @RequestMapping(value="/findByName/{name}", method=RequestMethod.GET)
+    public User findByName(@PathVariable String name){
+        return userService.findByName(name);
+    }
 }

@@ -4,6 +4,8 @@
  */
 package com.lhy.demo.service;
 
+import com.lhy.demo.domain.User;
+
 /**
  * 用户处理服务接口
  *
@@ -19,6 +21,8 @@ public interface IUserService {
      * @param age
      */
     void create(String name, Integer age);
+
+    User findByName(String name);
 
     /**
      * 根据name删除一个用户高

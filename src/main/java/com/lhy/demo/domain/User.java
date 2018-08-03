@@ -4,6 +4,11 @@
  */
 package com.lhy.demo.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * 用户对象实体
  *
@@ -11,10 +16,15 @@ package com.lhy.demo.domain;
  * @version v 1.0.0
  * @since v 1.0.0 2018-08-01 16:54
  */
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private Integer age;
 
     public Long getId() {
