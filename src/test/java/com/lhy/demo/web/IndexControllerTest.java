@@ -1,7 +1,6 @@
 package com.lhy.demo.web;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,30 +25,28 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebAppConfiguration
 public class IndexControllerTest {
 
-    private MockMvc mvc;
+  private MockMvc mvc;
 
-    @Autowired
-    private IndexController indexController;
+  @Autowired
+  private IndexController indexController;
 
-    @Before
-    public void setUp() throws Exception {
-        mvc = MockMvcBuilders.standaloneSetup(new IndexController()).build();
-    }
+  @Before
+  public void setUp() throws Exception {
+    mvc = MockMvcBuilders.standaloneSetup(new IndexController()).build();
+  }
 
-    @After
-    public void tearDown() throws Exception {
-    }
+  @After
+  public void tearDown() throws Exception {
+  }
 
-    @Test
-    public void testIndex() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/index").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Hello SpringBoot")));
-    }
+  @Test
+  public void testIndex() throws Exception {
+    mvc.perform(MockMvcRequestBuilders.get("/index").accept(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().string(equalTo("Hello SpringBoot")));
+  }
 
-    @Test
-    public void testPropertiesValue(){
-        Assert.assertEquals(indexController.getName(), "\u5f90\u6d77\u6d9b");
-        Assert.assertEquals(indexController.getId(), "lhy");
-    }
+  @Test
+  public void testPropertiesValue() {
+  }
 }

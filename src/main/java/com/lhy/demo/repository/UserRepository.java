@@ -1,6 +1,5 @@
 /**
- * Company
- * Copyright (C) 2004-2018 All Rights Reserved.
+ * Company Copyright (C) 2004-2018 All Rights Reserved.
  */
 package com.lhy.demo.repository;
 
@@ -20,11 +19,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findByName(String name);
+  User findByName(String name);
 
-    User findByNameAndAge(String name, Integer age);
+  User findByNameAndAge(String name, Integer age);
 
-    @Query("from User u where u.name=:name")
-    User findUser(@Param("name") String name);
+  @Query("from User u where u.name=:name")
+  User findUser(@Param("name") String name);
 
 }

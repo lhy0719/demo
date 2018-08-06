@@ -1,6 +1,5 @@
 /**
- * Company
- * Copyright (C) 2004-2018 All Rights Reserved.
+ * Company Copyright (C) 2004-2018 All Rights Reserved.
  */
 package com.lhy.demo.service;
 
@@ -15,29 +14,29 @@ import com.lhy.demo.domain.User;
  */
 public interface IUserService {
 
-    /**
-     * 新增一个用户
-     * @param name
-     * @param age
-     */
-    void create(String name, Integer age);
+  /**
+   * 新增一个用户
+   * @param name
+   * @param age
+   */
+  void create(String name, Integer age);
 
-    User findByName(String name);
+  User findByName(String name);
 
-    /**
-     * 根据name删除一个用户高
-     * @param name
-     */
-    void deleteByName(String name);
+  /**
+   * 根据name删除一个用户高
+   * @param name
+   */
+  void deleteByName(String name);
 
-    /**
-     * 获取用户总量
-     */
-    Integer getAllUsers();
+  /**
+   * 获取用户总量
+   */
+  Integer getAllUsers();
 
-    /**
-     * 删除所有用户
-     */
-    void deleteAllUsers();
+  /**
+   * 删除所有用户
+   */
+  void deleteAllUsers();
 
 }

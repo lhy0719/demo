@@ -1,16 +1,11 @@
 /**
- * Company
- * Copyright (C) 2004-2018 All Rights Reserved.
+ * Company Copyright (C) 2004-2018 All Rights Reserved.
  */
 package com.lhy.demo.web;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * springbootweb入口
@@ -22,38 +17,23 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class IndexController {
 
-    @Value("${lhy.name}")
-    private String name;
+  @ModelAttribute
+  public void init() {
+    System.out.println("here is ModelAttribute");
+  }
 
-    @Value("${lhy.id}")
-    private String id;
+  @RequestMapping("/login")
+  public String login() {
+    return "login";
+  }
 
-    @ModelAttribute
-    public void init(ModelMap map){
-        map.addAttribute("name",getName());
-        map.addAttribute("id",getId());
-        System.out.println("here is ModelAttribute");
-    }
+  @RequestMapping("/index")
+  public String index() {
+    return "index";
+  }
 
-    @RequestMapping("index")
-    public String index(HttpServletRequest request){
-        return "index";
-    }
-
-
-    String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+  @RequestMapping("/hello")
+  public String hello() {
+    return "hello";
+  }
 }
