@@ -21,7 +21,7 @@ public class ScheduledTasks {
 
   @Scheduled(fixedRate = 5000)
   public void reportCurrentTime() {
-    System.out.println("现在时间：" + dateFormat.format(new Date()));
+    System.out.println(Thread.currentThread().getName()+"====现在时间：" + dateFormat.format(new Date()));
   }
 
 }
