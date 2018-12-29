@@ -11,7 +11,7 @@ public class PersonTest {
     @Test
     public void testPerson() {
         Person p = new Person("Joe Q Author", 42, 173, 82, "Brown", "MALE");
-        Logger l = LoggerFactory.getLogger(Person.class.getName());
+        Logger l = LoggerFactory.getLogger(Person.class);
         l.error("Name: " + p.getName());
         l.info("Age:" + p.getAge());
         l.info("Height (cm):" + p.getHeight());
