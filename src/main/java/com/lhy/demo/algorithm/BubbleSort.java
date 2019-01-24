@@ -27,7 +27,6 @@ public class BubbleSort {
             }
         }
         Arrays.sort(queue);
-        System.out.println("");
         System.out.println(ArrayUtils.isSorted(queue));
         System.out.println(ArrayUtils.toString(queue));
     }
