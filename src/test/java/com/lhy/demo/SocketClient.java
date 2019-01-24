@@ -33,6 +33,7 @@ public class SocketClient {
         int len = is.read(buffer);
         String getData = new String(buffer, 0, len);
         System.out.println("从服务端获取的数据:" + getData);
+        //是否流
         is.close();
         os.close();
         sc.close();
