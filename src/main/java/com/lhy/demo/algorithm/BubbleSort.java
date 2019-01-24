@@ -3,7 +3,6 @@
  */
 package com.lhy.demo.algorithm;
 
-import java.util.Arrays;
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
@@ -26,7 +25,6 @@ public class BubbleSort {
                 }
             }
         }
-        System.out.println(ArrayUtils.isSorted(queue));
         System.out.println(ArrayUtils.toString(queue));
     }
 
