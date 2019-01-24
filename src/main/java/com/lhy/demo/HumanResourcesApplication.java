@@ -25,4 +25,5 @@ public class HumanResourcesApplication {
         e.setSalary(BigDecimal.valueOf(45000.0));
         e.printAudit(log);
     }
+
 }

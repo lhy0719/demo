@@ -14,6 +14,8 @@ import org.slf4j.Logger;
  */
 public class Person {
 
+    public static final String STATE_DELIMITER = "~";
+
     private String name;
     private int age;
     private int height;
@@ -23,6 +25,12 @@ public class Person {
 
     public Person() {
 
+    }
+
+    public enum Gender {
+        MALE,
+        FEMALE,
+        UNKNOWN
     }
 
     public Person(String name, int age, int height, int weight, String eyeColor,
@@ -108,4 +116,5 @@ public class Person {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
 }
